@@ -1,0 +1,6 @@
+<p>Edit Profile</p>
+<input [(ngModel)]="user.displayName" type="text" id="displayName" name="displayName" placeholder="Display Name"/>
+&nbsp;&nbsp;&nbsp;
+<input [(ngModel)]="user.photoURL" type="text" id="photoURL" name="photoURL" placeholder="photoURL"/>
+<!--<input [(ngModel)]="user.email" type="text" id="update_email" name="update_email" placeholder="Email"/>-->
+<button class="btn" (click)="edit_profile()">Save Changes</button>

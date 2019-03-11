@@ -1,0 +1,13 @@
+<header>
+    <nav>
+        <div class="table ng-scope">
+            <ul>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="branding"><a class="nav-link" routerLink="/">ToDo App</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf="authService.isLoggedIn()"><a class="nav-link" (click)="authService.logout()" routerLink="/">Logout</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf="!authService.isLoggedIn()"><a class="nav-link" routerLink="/">Login</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf="authService.isLoggedIn()"><a class="nav-link" routerLink="edit-profile">Profile</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf="authService.isLoggedIn()"><a class="nav-link" routerLink="todos">Todo's</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>

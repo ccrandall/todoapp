@@ -1,0 +1,17 @@
+<app-layout-header></app-layout-header>
+<div class="page">
+  <main>
+    <div *ngIf="authService.user | async as user; else showLogin">
+      <h1>Hello {{ user.displayName }}!</h1>
+    </div>
+    <ng-template #showLogin>
+      <p>Please login.</p>
+      <input [(ngModel)]="user.email" type="text" id="email" name="email" placeholder="Email"/>
+      &nbsp;&nbsp;&nbsp;
+      <input [(ngModel)]="user.password" type="password" id="password" name="password" placeholder="Password"/>
+      <button (click)="signInWithEmail()" class="btn">Login</button>
+    </ng-template>
+    <router-outlet></router-outlet>
+  </main>
+</div>
+<app-layout-footer></app-layout-footer>
